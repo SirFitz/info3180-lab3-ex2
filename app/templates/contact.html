@@ -4,7 +4,6 @@
 
 <h1 class="page-header">Contact Form</h1>
 <p> Fill in this form to contact the site owners.</p>
-<br>
 
 <form method="POST" action="{{ url_for('contact') }}">
     
@@ -32,9 +31,7 @@
         <p>Please enter the message you would like to send.</p>
         {{ form.message(cols="55", rows="5") }}
     </div>
-    
     <button type="submit" class="btn btn-primary active">Send</button>
-    
 </form>
 
 {% endblock %}

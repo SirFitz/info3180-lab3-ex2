@@ -32,18 +32,16 @@ def contact():
     form = Form()
     
     if request.method == 'POST':
-        # Validate form entries
         if form.validate_on_submit():
            
             from_name = request.form['name']
             from_email = request.form['email']
             subject = request.form['subject']
             msg = request.form['message']
-            # Send email message
+        
             send_email(from_name,from_email,subject,msg)
             
             flash('Message has been sent.')
-            
             return redirect(url_for('home'))
             
     return render_template('contact.html', form=form)
